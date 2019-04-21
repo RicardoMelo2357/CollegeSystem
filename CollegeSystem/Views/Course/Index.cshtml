@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+
+<div ng-controller="CourseController">
+    <h2>{{title}}</h2>
+
+    <div class="container">
+        <div class="col-md-12">
+
+            <div class="col-md-4">
+                <div class="form_main">
+                    <h4 class="heading"><strong>Add </strong> Course <span></span></h4>
+                    <div class="form">
+                        <form action="contact_send_mail.php" method="post" id="contactFrm" name="contactFrm">
+                            <input type="text" required="" placeholder="Course Name" name="name" class="txt" ng-model="Object.CourseName">
+                            <button type="button" ng-click="AddCourse(Object)" class="txt2">Add</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Course Name</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="course in ListCourse">
+                            <td>{{course.CourseId}}</td>
+                            <td>{{course.CourseName}}</td>
+                            <td><button ng-click="DeleteCourse(course.CourseId)">Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

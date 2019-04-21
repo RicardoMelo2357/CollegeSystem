@@ -1,0 +1,1 @@
+﻿var MyApp = angular.module('CollegeSystemApp', ['ngRoute']);
