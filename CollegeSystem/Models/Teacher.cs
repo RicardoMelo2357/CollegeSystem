@@ -6,7 +6,7 @@ namespace CollegeSystem.Models
     {
         public int TeacherId { get; set; }
         [Required]
-        public string Name { get; set; }
+        public string TeacherName { get; set; }
         [Required]
         public string BirthDay { get; set; }
         [Required]
