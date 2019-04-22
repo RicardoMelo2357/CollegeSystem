@@ -1,2 +1,0 @@
-1º Colocar o arquivo CollegeSystem.sln uma pasta a cima
-2º executar o comando Update-Database no package manager console dentro do Visual Studio
