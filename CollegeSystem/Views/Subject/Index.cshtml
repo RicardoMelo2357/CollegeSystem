@@ -39,7 +39,7 @@
                     <tbody>
                         <tr ng-repeat="subject in ListSubject">
                             <td>{{subject.SubjectId}}</td>
-                            <td>{{subject.CourseId.CourseName}}</td>
+                            <td>{{subject.Course.CourseName}}</td>
                             <td>{{subject.SubjectName}}</td>
                             <td><button ng-click="DeleteSubject(subject.SubjectId)">Delete</button></td>
                         </tr>

@@ -1,5 +1,52 @@
 ﻿<!DOCTYPE html>
-
 <div ng-controller="StudantController">
     <h2>{{title}}</h2>
+    <div class="container">
+        <div class="col-md-12">
+            <div class="col-md-2">
+                <h4 class="heading"><strong>Select </strong> Teacher <span></span></h4>
+                <select ng-model="Object.TeacherId">
+                    <option ng-repeat="teacher in ListTeacher" value="{{teacher.TeacherId}}">{{teacher.TeacherName}}</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <div class="form_main">
+                    <h4 class="heading"><strong>Add </strong> Teacher <span></span></h4>
+                    <div class="form">
+                        <form action="contact_send_mail.php" method="post" id="contactFrm" name="contactFrm">
+                            <input type="text" required="" placeholder="Studant Name" name="name" ng-model="Object.StudantName">
+                            <input type="date" required="" placeholder="Studant BirthDay" name="birthday" ng-model="Object.BirthDay">
+                            <input type="text" required="" placeholder="RegistrationNumber" name="birthday" ng-model="Object.RegistrationNumber">
+                            <button type="button" ng-click="AddStudant(Object)" class="txt2">Add</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Course Name</th>
+                            <th>Subject Name</th>
+                            <th>Teacher Name</th>
+                            <th>Studant Name</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="studant in ListStudant">
+                            <td>{{studant.StudantId}}</td>
+                            <td>{{studant.Teacher.Subject.Course.CourseName}}</td>
+                            <td>{{studant.Teacher.Subject.SubjectName}}</td>
+                            <td>{{studant.Teacher.TeacherName}}</td>
+                            <td>{{studant.StudantName}}</td>
+                            <td><button ng-click="DeleteSubject(subject.SubjectId)">Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>

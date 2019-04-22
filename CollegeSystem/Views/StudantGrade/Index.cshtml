@@ -1,5 +1,57 @@
 ﻿<!DOCTYPE html>
-
 <div ng-controller="StudantGradeController">
     <h2>{{title}}</h2>
+    <div class="container">
+        <div class="col-md-12">
+            <div class="col-md-2">
+                <h4 class="heading"><strong>Select </strong> Subject <span></span></h4>
+                <select ng-model="Object.SubjectId">
+                    <option ng-repeat="subject in ListSubject" value="{{subject.SubjectId}}">{{subject.SubjectName}}</option>
+                </select>
+
+                <h4 class="heading"><strong>Select </strong> Studant <span></span></h4>
+                <select ng-model="Object.StudantId">
+                    <option ng-repeat="studant in ListStudant" value="{{studant.StudantId}}">{{studant.StudantName}}</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <div class="form_main">
+                    <h4 class="heading"><strong>Add </strong> Studant Grade <span></span></h4>
+                    <div class="form">
+                        <form action="contact_send_mail.php" method="post" id="contactFrm" name="contactFrm">
+                            <input type="text" required="" placeholder="Grade" name="Grade" ng-model="Object.RegistrationNumber">
+                            <button type="button" ng-click="AddStudantGrade(Object)" class="txt2">Add</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Course Name</th>
+                            <th>Subject Name</th>
+                            <th>Teacher Name</th>
+                            <th>Studant Name</th>
+                            <th>Grade</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="studantGrade in ListStudantGrade">
+                            <td>{{studantGrade.StudantGradeId}}</td>
+                            <td>{{studantGrade.Subject.Course.CourseName}}</td>
+                            <td>{{studantGrade.Subject.SubjectName}}</td>
+                            <td>{{studantGrade.Studant.Teacher.TeacherName}}</td>
+                            <td>{{studantGrade.Studant.StudantName}}</td>
+                            <td>{{studantGrade.Grade}}</td>
+                            <td></td>
+                            <td><button ng-click="DeleteSubject(subject.SubjectId)">Delete</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
