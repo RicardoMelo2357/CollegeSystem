@@ -27,7 +27,7 @@ namespace CollegeSystem.Controllers
            return Json(new { Message = message });
         }
 
-        [HttpPost]
+        [HttpPut]
         public JsonResult UpdateCourse(Course course)
         {
             if (course == null)
@@ -60,8 +60,8 @@ namespace CollegeSystem.Controllers
             return Json(List, JsonRequestBehavior.AllowGet);
         }
 
-        [HttpPost]
-        public JsonResult DeleteCourse(Course course)
+        [HttpDelete]
+        public JsonResult CourseDelete(Course course)
         {
             if (course == null)
             {

@@ -69,7 +69,7 @@ namespace CollegeSystem.Controllers
             }
 
             var dao = new TeacherDAO();
-            var message = dao.deleteTeacher(teacher);
+            var message = dao.DeleteTeacher(teacher);
 
             return Json(new { Message = message });
         }

@@ -18,13 +18,13 @@ namespace CollegeSystem.Controllers
         {
             if (studant == null)
             {
-                return Json(new { Message = "Error", HasError = true });
+                return Json(new { Message = "Error", HasError = true }, JsonRequestBehavior.AllowGet);
             }
 
             var dao = new StudantDAO();
             var message = dao.AddStudant(studant);
 
-            return Json(new { Message = message });
+            return Json(new { Message = message }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
@@ -32,13 +32,13 @@ namespace CollegeSystem.Controllers
         {
             if (studant == null)
             {
-                return Json(new { Message = "Error", HasError = true });
+                return Json(new { Message = "Error", HasError = true }, JsonRequestBehavior.AllowGet);
             }
 
             var dao = new StudantDAO();
             var message = dao.UpdateStudant(studant);
 
-            return Json(new { Message = message });
+            return Json(new { Message = message }, JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
@@ -46,7 +46,7 @@ namespace CollegeSystem.Controllers
         {
             if (studant == null)
             {
-                return Json(new { Message = "Error", HasError = true });
+                return Json(new { Message = "Error", HasError = true }, JsonRequestBehavior.AllowGet);
             }
 
             var dao = new StudantDAO();
@@ -54,7 +54,7 @@ namespace CollegeSystem.Controllers
 
             if (!List.Any())
             {
-                return Json(new { Message = "No entry found" });
+                return Json(new { Message = "No entry found" }, JsonRequestBehavior.AllowGet);
             }
 
             return Json(List, JsonRequestBehavior.AllowGet);
@@ -65,13 +65,13 @@ namespace CollegeSystem.Controllers
         {
             if (studant == null)
             {
-                return Json(new { Message = "Erro", HasError = true });
+                return Json(new { Message = "Erro", HasError = true }, JsonRequestBehavior.AllowGet);
             }
 
             var dao = new StudantDAO();
             var message = dao.deleteStudant(studant);
 
-            return Json(new { Message = message });
+            return Json(new { Message = message }, JsonRequestBehavior.AllowGet);
         }
     }
 }

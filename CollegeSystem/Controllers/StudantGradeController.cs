@@ -42,7 +42,7 @@ namespace CollegeSystem.Controllers
         }
 
         [HttpGet]
-        public JsonResult ListStudant(StudantGrade studantGrade)
+        public JsonResult ListStudantGrade(StudantGrade studantGrade)
         {
             if (studantGrade == null)
             {
