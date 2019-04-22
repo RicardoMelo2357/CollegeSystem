@@ -52,6 +52,10 @@ namespace CollegeSystem.Entity
             using (var context = new CollegeContext())
             {
                 IList<StudantGrade> listStudantGrade = context.StudantGrades.ToList();
+                IList<Studant> listStudant = context.Studants.ToList();
+                IList<Teacher> listTeacher = context.Teachers.ToList();
+                IList<Subject> listSubject = context.Subjects.ToList();
+                IList<Course> listCourse  = context.Courses.ToList();
                 return listStudantGrade;
             }
         }

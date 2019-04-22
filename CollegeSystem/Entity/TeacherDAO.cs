@@ -41,6 +41,8 @@ namespace CollegeSystem.Entity
             using (var context = new CollegeContext())
             {
                 IList<Teacher> listTeacher= context.Teachers.ToList();
+                IList<Subject> listSubject= context.Subjects.ToList();
+                IList<Course> listCourse = context.Courses.ToList();
                 return listTeacher;
             }
         }
@@ -56,7 +58,7 @@ namespace CollegeSystem.Entity
                     return "Error";
                 }
 
-                result.Name = teacher.Name;
+                result.TeacherName = teacher.TeacherName;
                 result.Salary = teacher.Salary;
                 result.SubjectId = teacher.SubjectId;
                 context.SaveChanges();
@@ -65,7 +67,7 @@ namespace CollegeSystem.Entity
             }
         }
 
-        public string deleteTeacher(Teacher teacher)
+        public string DeleteTeacher(Teacher teacher)
         {
             using (var context = new CollegeContext())
             {

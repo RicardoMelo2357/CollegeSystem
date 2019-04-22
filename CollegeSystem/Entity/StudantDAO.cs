@@ -42,8 +42,8 @@ namespace CollegeSystem.Entity
                 }
 
 
-                result.Name = studant.Name;
-                result.SubjectId = studant.SubjectId;
+                result.StudantName = studant.StudantName;
+                //result.SubjectId = studant.SubjectId;
                 context.SaveChanges();
 
                 return "Sucess";
@@ -55,6 +55,9 @@ namespace CollegeSystem.Entity
             using (var context = new CollegeContext())
             {
                 IList<Studant> listStudant = context.Studants.ToList();
+                IList<Teacher> listTeacher = context.Teachers.ToList();
+                IList<Subject> listSubject = context.Subjects.ToList();
+                IList<Course> listCourse = context.Courses.ToList();
                 return listStudant;
             }
         }

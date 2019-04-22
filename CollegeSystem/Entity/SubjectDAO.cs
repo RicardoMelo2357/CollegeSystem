@@ -42,13 +42,7 @@ namespace CollegeSystem.Entity
             using (var context = new CollegeContext())
             {
                 IList<Subject> listSubject = context.Subjects.ToList();
-                IList<Course> listCourse = context.Courses.ToList();
-
-                foreach (var item in listSubject)
-                {
-                    
-                }
-
+                IList<Course> listCourse= context.Courses.ToList();
                 return listSubject;
             }
         }

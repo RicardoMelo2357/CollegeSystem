@@ -26,10 +26,10 @@ namespace CollegeSystem.Entity
                 .WithMany()
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<Studant>().
-               HasRequired(c => c.Subject)
-               .WithMany()
-               .WillCascadeOnDelete(false);
+            //modelBuilder.Entity<Studant>().
+            //   HasRequired(c => c.Subject)
+            //   .WithMany()
+            //   .WillCascadeOnDelete(false);
 
             base.OnModelCreating(modelBuilder);
         }
